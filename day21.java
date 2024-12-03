@@ -3,7 +3,7 @@ import java.nio.file.*;
 import java.io.IOException;
 
 
-public class p10 {
+public class p010 {
 
     public static boolean isSafe(List<Integer> report) {
         for (int i = 0; i < report.size() - 1; i++) {
@@ -27,6 +27,19 @@ public class p10 {
         }
 
         return isIncreasing || isDecreasing;
+    }
+    public static boolean dampener(List<Integer> report) {
+        if (isSafe(report)) {
+            return true;
+        }
+        for (int i = 0; i < report.size() ; i++) {
+            List<Integer> modifiedReport = new ArrayList<>(report);
+            modifiedReport.remove(i);
+            if (isSafe(modifiedReport)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 

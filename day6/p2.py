@@ -51,4 +51,4 @@ for o_r in range(R):
                 r, c = rr, cc  
 
 pr(p1)
-pr(p2 - 1)
+pr(p2)
